@@ -1,0 +1,16 @@
+TypeError                                 Traceback (most recent call last)
+<ipython-input-51-bceb6799e4f2> in <module>
+     13     duraton_sec = sheet.cell(r,10).value
+     14     #closed_date = sheet.cell(r,11).value
+---> 15     closed_date = datetime.datetime(*(xlrd.xldate_as_tuple(sheet.cell(r,11).value, book.datemode)))#.strftime('%d -%m -%Y %H:%M:%S')
+     16     closed_by = sheet.cell(r,12).value
+     17     #resolution_date = sheet.cell(r,13).value
+
+C:\ProgramData\Anaconda3\lib\site-packages\xlrd\xldate.py in xldate_as_tuple(xldate, datemode)
+     93     if xldate == 0.00:
+     94         return (0, 0, 0, 0, 0, 0)
+---> 95     if xldate < 0.00:
+     96         raise XLDateNegative(xldate)
+     97     xldays = int(xldate)
+
+TypeError: '<' not supported between instances of 'str' and 'float'
